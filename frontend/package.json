@@ -1,0 +1,26 @@
+{
+  "name": "age-verification-dapp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Zero-knowledge age verification dApp using Noir",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "noir",
+    "zk",
+    "age-verification",
+    "privacy"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@noir-lang/backend_barretenberg": "^0.36.0",
+    "@noir-lang/noir_js": "^0.36.0",
+    "vite": "^7.2.6",
+    "vite-plugin-top-level-await": "^1.6.0",
+    "vite-plugin-wasm": "^3.5.0"
+  }
+}

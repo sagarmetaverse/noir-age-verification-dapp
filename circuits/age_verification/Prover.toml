@@ -1,0 +1,11 @@
+# Example inputs for age verification
+# Private inputs (not revealed in proof)
+birth_year = 1990
+birth_month = 6
+birth_day = 15
+
+# Public inputs (revealed in proof)
+current_year = 2024
+current_month = 12
+current_day = 1
+min_age = 18

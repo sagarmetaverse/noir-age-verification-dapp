@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Verification dApp - Zero Knowledge Proof</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>🔐 Age Verification dApp</h1>
+        <p class="subtitle">Prove you're 18+ without revealing your actual age</p>
+      </header>
+
+      <main>
+        <section class="info-card">
+          <h2>How It Works</h2>
+          <p>
+            This application uses <strong>zero-knowledge proofs</strong> powered by 
+            <a href="https://noir-lang.org/" target="_blank">Noir</a> to verify your age 
+            without revealing your actual birth date. Your private information never leaves 
+            your browser!
+          </p>
+        </section>
+
+        <section class="form-section">
+          <h2>Enter Your Birth Date</h2>
+          <p class="privacy-note">
+            🔒 Your birth date is kept private and is only used locally to generate the proof
+          </p>
+          
+          <form id="verification-form">
+            <div class="form-group">
+              <label for="birth-date">Birth Date:</label>
+              <input type="date" id="birth-date" required max="" />
+            </div>
+            
+            <div class="form-group">
+              <label for="min-age">Minimum Age to Verify:</label>
+              <input type="number" id="min-age" value="18" min="1" max="120" required />
+            </div>
+
+            <button type="submit" id="generate-btn">
+              <span class="btn-text">Generate Proof</span>
+              <span class="btn-loading" style="display: none;">Generating...</span>
+            </button>
+          </form>
+        </section>
+
+        <section id="result-section" class="result-section" style="display: none;">
+          <h2>Verification Result</h2>
+          <div id="result-content"></div>
+        </section>
+
+        <section id="proof-section" class="proof-section" style="display: none;">
+          <h2>Generated Proof</h2>
+          <p class="info-text">
+            This proof can be shared with verifiers. It proves your age without revealing your birth date.
+          </p>
+          <div class="proof-details">
+            <h3>Public Inputs (Visible to Verifier)</h3>
+            <pre id="public-inputs"></pre>
+            
+            <h3>Proof (Cryptographic Proof of Age)</h3>
+            <pre id="proof-data" class="proof-data"></pre>
+          </div>
+          <button id="verify-btn" class="verify-btn">Verify Proof</button>
+          <div id="verify-result" style="display: none;"></div>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          Built with <a href="https://noir-lang.org/" target="_blank">Noir</a> |
+          <a href="https://github.com/sagarmetaverse/noir-age-verification-dapp" target="_blank">View Source</a>
+        </p>
+      </footer>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+      <div class="loading-content">
+        <div class="spinner"></div>
+        <p id="loading-text">Loading...</p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
